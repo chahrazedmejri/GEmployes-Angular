@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <table class="table table-success table-striped " >
+  <tr  style="background-color: #dfe0e0;"> 
+        <th >Id</th> 
+        <th>Nom</th>
+         <th>Prenom</th> 
+         <th>Cin</th> 
+         <th>Email</th> 
+         <th>Adresse</th> 
+         <th>poste</th> 
+         <th>date debut contrat</th>
+         <th></th>
+         <th></th>
+        </tr>
+    <tbody *ngFor="let employe of employes" style="background-color: #dfe0e0;" >
+           
+        <tr >
+        <td>{{employe.idEmploye}}</td>
+        <td>{{employe.nomEmploye}}</td>
+        <td>{{employe.prenomEmploye}}</td>
+        <td>{{employe.cinEmploye}}</td>
+        <td>{{employe.emailEmploye}}</td>
+        <td>{{employe.adressEmploye}}</td>
+        <td>{{employe.posteEmploye}}</td>
+        <td> {{employe.datedebcontrat | date:'dd/MM/yyyy' }} </td>
+        <td><a class="btn btn-danger" (click)="supprimerEmploye(employe)">Supprimer</a></td>
+        <td><a class="btn btn-success" [routerLink]="['/modifierEmploye',employe.idEmploye]"  >Modifier</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

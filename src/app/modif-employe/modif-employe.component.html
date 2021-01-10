@@ -1,0 +1,50 @@
+<div class="container">
+    <div><br>
+    <h2> Modifier un Employè :</h2><br>
+    </div>
+    <form >
+        <div  readonly class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID </label>
+        <input type="text" [(ngModel)]="currentEmploye.idEmploye" name="id" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom </label>
+        <input type="text"[(ngModel)]= "currentEmploye.nomEmploye"
+        name="nom" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prenom </label>
+        <input type="text" [(ngModel)]= "currentEmploye.prenomEmploye" name="prenom" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Cin</label>
+        <input type="number" [(ngModel)]= "currentEmploye.cinEmploye" name="cin" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-2 col-lg-4">
+            <label for="exampleInputEmail1" class="form-label">Email </label>
+            <input type="email"  [(ngModel)]= "currentEmploye.emailEmploye" name="email" class="form-control" >
+          </div>
+          <br>
+          <div class="col-sm-2 col-md-2 col-lg-2" >
+            <label >Adresse</label>
+        <input type="text" [(ngModel)]="currentEmploye.adressEmploye" name="adresse" class="form-control">
+          </div>
+          
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label >Poste </label>
+            <input type="text" [(ngModel)]= "currentEmploye.posteEmploye"
+            name="prenom" class="form-control">
+            </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label >Date debut de contrat</label>
+            <input type="date" [ngModel]="currentEmploye.datedebcontrat| date: 'yyyy-MM-dd'"  (ngModelChange)=" currentEmploye.datedebcontrat= $event" name="datedebcontrat" class="form-control">
+        </div>
+         <div>
+             <br>
+                <button type="submit" (click)="modifierEmploye()"  class="btn btn-success"> Modifier  </button>
+                <div><h6>{{mesg}}</h6></div> 
+
+         </div>
+        </form>
+        </div>
+    
